@@ -1,12 +1,21 @@
-import logo from './logo.svg';
+import Login from './Components/Login';
+import SignUp from './Components/SignUp';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Money Transfer App</h1>
-      </header>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/signup" element={<SignUp/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

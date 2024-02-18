@@ -1,0 +1,22 @@
+
+.button{
+    background-color:#ff004f;
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+.button:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+    background-color: white;
+   }
+
+.error{
+    color:#ff004f;
+}
+.heading{
+    color:#ff004f
+}
