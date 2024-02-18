@@ -10,7 +10,7 @@ function Home() {
     </div>
     <div className='body'>
        <h2> The future of MOBILE BANKING</h2>
-       <img src='https://media.istockphoto.com/id/1182647518/photo/excited-girl-using-smartphone-holding-finger-on-chin-pink-background.jpg?s=612x612&w=0&k=20&c=BV-9oTAoRKaS8p6FvARn28zeUypuLsDo0O3254oXSnE='></img>
+       <img src='https://www.shutterstock.com/image-photo/mobile-shopping-cheerful-arabic-woman-600nw-2108487698.jpg'></img>
     </div>
     </>
   )
