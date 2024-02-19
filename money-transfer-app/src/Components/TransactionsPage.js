@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./TransactionsPage.css"
 
 const TransactionPage = () => {
   const [depositAmount, setDepositAmount] = useState('');
