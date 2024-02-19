@@ -24,7 +24,7 @@ const TransactionPage = () => {
     // Update account balance
     setAccountBalance(prevBalance => prevBalance - parseFloat(transferAmount));
 
-    // the moment you click send it will clear the phone number and transfer amount inputed
+    // the moment utaclick send it will clear the phone number and transfer amount inputed
     setPhoneNumber('');
     setTransferAmount('');
   };

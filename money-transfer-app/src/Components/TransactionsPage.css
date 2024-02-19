@@ -14,16 +14,12 @@ h1 {
     color: #ff004f; /* Set color */
 }
 
-h3 {
-    justify-content: center;
-}
-
 .card {
     background-color: #474545b8;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 30px;
-    width: 700px; /* Set width */
+    padding: 20px;
+    width: 400px; /* Set width */
     max-width: 90%; /* Set maximum width */
     margin-bottom: 20px; /* Adjust margin bottom */
 }
@@ -43,29 +39,33 @@ h3 {
     padding: 8px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(53, 50, 50);
-    color: rgb(255, 255, 255); /* Change text color to black */
+    background-color: black; /* Set background color to black */
+    color: white; /* Set text color to white */
+    outline: 1px solid white; /* Set white outline */
 }
 
 .card .form-buttons {
     display: flex;
-    margin-right: 10%;
-    justify-content: center;
+    justify-content: space-between; /* Space buttons evenly */
+    margin-right: auto;
 }
 
-.button {
+.card .form-buttons .button {
     background-color: #ff004f;
     width: 100px;
     height: 25px;
-    border-radius: 10px;
+    border-radius: 20px; /* Make buttons rounded */
     border: none;
-    color: black; /* Change text color to black */
+    color: black; /* Set text color to black */
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.button:hover {
-    background-color: #ff004f; /* Change hover background color to red */
-    color: white; /* Change hover text color to white */
+.card .form-buttons .button:hover {
+    background-color: red; /* Change button background color on hover to red */
+    color: black;
     transition: 0.5s;
 }
 
