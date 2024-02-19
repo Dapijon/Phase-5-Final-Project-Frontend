@@ -24,7 +24,7 @@ const TransactionPage = () => {
     // Update account balance
     setAccountBalance(prevBalance => prevBalance - parseFloat(transferAmount));
 
-    // the moment utaclick send it will clear the phone number and transfer amount inputed
+    // Clear the phone number and transfer amount inputs
     setPhoneNumber('');
     setTransferAmount('');
   };
@@ -56,7 +56,19 @@ const TransactionPage = () => {
               onChange={(event) => setDepositAmount(event.target.value)} 
             />
           </label>
-          <button type="submit">Deposit</button>
+          <button 
+            type="submit"
+            className="button"
+            style={{
+              backgroundColor: '#ff004f',
+              borderRadius: '20px',
+              color: 'black',
+              justifyItems: 'center',
+              marginLeft: '40%',
+            }}
+          >
+            Deposit
+          </button>
         </form>
       </div>
 
@@ -81,10 +93,28 @@ const TransactionPage = () => {
             />
           </label>
           <div className="form-buttons">
-            <button type="submit">Send</button>
+            <button 
+              type="submit"
+              className="button"
+              style={{
+                backgroundColor: '#ff004f',
+                borderRadius: '20px',
+                color: 'black'
+              }}
+            >
+              Send
+            </button>
             <button 
               type="button" 
               onClick={addToFavorites}
+              className="button"
+              style={{
+                backgroundColor: '#ff004f',
+                borderRadius: '20px',
+                color: 'black',
+                width: '150px',
+                marginLeft: '10px',
+              }}
             >
               Add to Favorites
             </button>

@@ -2,73 +2,89 @@
 .transaction-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
+    color: white; 
 }
 
 h2 {
-    margin-bottom: 20px; /* Adjust margin bottom */
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 h1 {
     margin-top: 0;
-    color: #ff004f; /* Set color */
+    color: #ff004f;
 }
 
 .card {
-    background-color: #474545b8;
+    background-color: #232222b8;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    width: 400px; /* Set width */
-    max-width: 90%; /* Set maximum width */
-    margin-bottom: 20px; /* Adjust margin bottom */
+    width: 700px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.card h3 {
+    color: #ff004f;
+    text-align: center;
+    margin-top: auto;
 }
 
 .card form {
     display: flex;
-    flex-direction: column; /* Align form elements vertically */
-    gap: 10px; /* Add gap between form elements */
+    flex-direction: column;
+    gap: 10px;
 }
 
 .card form label {
     margin-bottom: 5px;
-    color: white; /* Set color */
 }
 
 .card form input {
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
-    background-color: black; /* Set background color to black */
-    color: white; /* Set text color to white */
-    outline: 1px solid white; /* Set white outline */
+    background-color: rgb(99, 97, 97);
+    color: white;
+    margin-left: 1%;
+    justify-content: center;
 }
 
-.card .form-buttons {
+.form-buttons {
     display: flex;
-    justify-content: space-between; /* Space buttons evenly */
-    margin-right: auto;
+    justify-content: center;
+    margin-left: 1px;
+    color: #ff004f;
 }
 
-.card .form-buttons .button {
+.button {
     background-color: #ff004f;
     width: 100px;
     height: 25px;
-    border-radius: 20px; /* Make buttons rounded */
+    border-radius: 20px;
     border: none;
-    color: black; /* Set text color to black */
+    color: black;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.card .form-buttons .button:hover {
-    background-color: red; /* Change button background color on hover to red */
-    color: black;
+.button:hover {
+    background-color: red;
     transition: 0.5s;
 }
 
-.link {
-    color: #ff004f;
+.favorites-list {
+    color: #ff0000; /* Set favorites list color */
+}
+
+.favorites-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favorites-list li {
+    margin-bottom: 5px;
 }
