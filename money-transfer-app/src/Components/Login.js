@@ -72,9 +72,9 @@ function Login() {
                 )}
               </Form.Group>
 
-              <Button className="button" type="submit" variant="primary">
+              <button className="custom-button" type="submit">
                 Login
-              </Button>
+              </button>
 
               <Form.Group>
                 <small>
