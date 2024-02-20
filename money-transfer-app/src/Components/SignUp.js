@@ -179,7 +179,8 @@ function SignUp() {
                   <p className="error">Min characters should be 8</p>
                 )}
               </Form.Group>
-
+              
+              /*changed the button component here*/
               <button className="custom-button" type="submit">
                 Sign Up
               </button>
