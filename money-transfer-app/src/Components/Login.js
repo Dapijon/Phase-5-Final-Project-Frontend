@@ -95,7 +95,8 @@ function Login() {
             <Button className="button"
               type="button"
               variant="primary"
-              onClick={handleSubmit(loginUser)}
+              // onClick={handleSubmit(loginUser)}
+              onClick={()=>navigate('/analytics')}
             >
               Login
             </Button>
