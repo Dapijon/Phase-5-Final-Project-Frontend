@@ -1,0 +1,15 @@
+.summary-table {
+    text-align: center;
+    align-items: center;
+    width: 60vw;
+}
+
+.userSummary {
+    
+    height: 25vh;
+    width: 40vw;
+}
+
+.summary {
+    height: 80px
+}
