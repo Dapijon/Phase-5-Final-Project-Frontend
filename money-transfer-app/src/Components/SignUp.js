@@ -230,7 +230,7 @@ function SignUp() {
             <br />
 
             <Form.Group>
-              <Button className="button" type="submit" variant="primary">
+              <Button className="signup-btn"  type="submit" variant="primary">
                 Sign Up
               </Button>
             </Form.Group>

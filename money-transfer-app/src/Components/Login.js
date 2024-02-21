@@ -92,12 +92,13 @@ function Login() {
           <br />
 
           <Form.Group>
-            <Button className="button"
+            <Button className="lg-btn"
               type="button"
               variant="primary"
+              size='lg'
               onClick={handleSubmit(loginUser)}
-              // onClick={handleSubmit(loginUser)}
-              // onClick={()=>navigate('/analytics')}
+             
+            
             >
               Login
             </Button>
