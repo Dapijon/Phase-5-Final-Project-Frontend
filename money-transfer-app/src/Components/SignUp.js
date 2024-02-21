@@ -51,7 +51,7 @@ function SignUp() {
 
   return (
     <div className="container">
-      <div className="form-contents">
+      <div className="sign-up form-contents">
         <div className="form">
           {show ? (
             <>
