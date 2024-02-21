@@ -1,22 +1,93 @@
+.container {
 
-.button{
-    background-color:#ff004f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    width: 400px;
+    margin-top: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .form-contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-contents .card {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .form-contents .card .card-body {
+    padding: 40px;
+  }
+  
+  .form-contents .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .custom-button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      width: 90%;
+    }
+  }
+  
+
+    height: 90vh;
+}
+
+.lg-btn {
+    background: greenyellow;
     width: 100px;
-    height: 25px;
     border-radius: 10px;
     border: none;
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
     transition: 0.5s;
     color: black;
     background-color: white;
-   }
+}
 
-.error{
-    color:#ff004f;
+.error {
+    color: #ff004f;
 }
-.heading{
-    color:#ff004f
+
+.heading {
+    color: #ff004f
 }
+
