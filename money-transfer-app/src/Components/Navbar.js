@@ -6,6 +6,7 @@ import "./Navbar.css";
 function Navbar() {
   //const [logged] = useAuth();
   return (
+
     <div className="nav-items">
       <div className="header-icon">
         <img
@@ -20,9 +21,10 @@ function Navbar() {
 
       </div>
       <nav className="navbar ">
+
         <ul className="navbar-links">
           <li className="nav-item">
-            <Link className="link-margin" to="/signup">Sign Up</Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
           <li className="nav-item">
             <Link to="/login">Login</Link>
@@ -32,5 +34,7 @@ function Navbar() {
     </div>
   );
 }
+
+
 
 export default Navbar;

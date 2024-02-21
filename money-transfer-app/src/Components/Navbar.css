@@ -1,55 +1,41 @@
-.nav-items{
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items:center;
-  margin-top: 12px;
- 
-}
-.nav-img{
-  height: 70px;
-}
 
-.header-icon{
-  display: flex;
-  margin-top: 20px;
-  justify-content: center;;
-  align-items: center;
-}
 .navbar {
-    
-    color: #f20404;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
-    justify-content: space-around; 
-  
-  }
-  
-  .nav-item {
-    margin: 0;
-    margin-right: 40px;
-  }
-  
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  background-color: transparent;
+  padding: 20px;
+  z-index: 2; 
+  float: right;
+  margin-top: 30px;
+}
 
-  .nav-item a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px; 
-  }
-  
-  .nav-item a:hover {
-    background:#ff004f; 
-    transition: 0.5s;
-  }
-  
- 
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 10px; 
+}
+
+.nav-item:first-child {
+  margin-left: 0;
+}
+
+.nav-item a {
+  padding: 10px 20px;
+  background-color: #f91b7b;
+  color: #000000;
+  text-align: center;
+  text-decoration: solid #000000;
+  border-radius: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-item a:hover {
+  background-color: #ff0000;
+}
+

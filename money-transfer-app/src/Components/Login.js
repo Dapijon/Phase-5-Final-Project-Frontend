@@ -1,11 +1,9 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-//import {login} from "../auth"
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import "./Login.css";
-
 
 function Login() {
   const {
@@ -17,32 +15,30 @@ function Login() {
 
   const navigate = useNavigate();
 
-    const loginUser=(data) =>{
-      console.log(data)
+  const loginUser = (data) => {
+    console.log(data)
 
-      const requestOptions={
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-      
-        body: JSON.stringify(data)
-      }
-      fetch('/login', requestOptions)
-      .then(res=>res.json())
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+
+    fetch('/login', requestOptions)
+      .then(res => res.json())
       .then(data => {
-        console.log(data.access_token)
-        //login(data.access_token)
-        
-        navigate('/')
-     
-      })
-      reset()
-    }
-   
+        console.log(data.access_token);
+        navigate('/');
+      });
+    reset();
+  };
 
   return (
     <div className="container">
+
+ 
       <div className="form">
         <h1 className="heading">Login </h1>
         <form>
@@ -112,6 +108,7 @@ function Login() {
             </small>
           </Form.Group>
         </form>
+
       </div>
     </div>
   );

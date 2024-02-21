@@ -1,3 +1,4 @@
+
 * {
     color: white;
 
@@ -9,10 +10,62 @@
     margin-bottom: 30px;
 }
 
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    height: 100vh;
+  }
+  
+  .card {
+    width: 400px;
+    margin-top: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .form-data {
+    margin-top: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  .link {
+    color: #007afc;
+    text-decoration: none;
+  }
+  
+  .custom-button {
+    width: 60%;
+    margin-bottom: 10px;
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  
+  @media (max-width: 576px) {
+    .card {
+      width: 90%;
+    }
+  }
+  
+
 
 }
 
@@ -47,3 +100,4 @@
 .link {
     color: #ff004f;
 }
+
