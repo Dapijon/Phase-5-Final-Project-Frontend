@@ -51,7 +51,7 @@ function SignUp() {
 
   return (
     <div className="container">
-      <div className="form-contents">
+      <div className="sign-up form-contents">
         <div className="form">
           {show ? (
             <>
@@ -230,7 +230,7 @@ function SignUp() {
             <br />
 
             <Form.Group>
-              <Button className="button" type="submit" variant="primary">
+              <Button className="signup-btn"  type="submit" variant="primary">
                 Sign Up
               </Button>
             </Form.Group>

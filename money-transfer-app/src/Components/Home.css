@@ -1,25 +1,29 @@
 .header {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
 .phone-image {
-  max-width: 100%;
+  height: 200px;
+  margin-right: 50px;
+
 }
 
-.h2{
+.h2 {
   color: #ff004f;
 }
 
-.image {
+/* .image {
   height: 80px;
   width: 80px;
   margin-right: 40px;
-}
+} */
 
-.home-heading{
+.home-heading {
   align-items: center;
 }
+
 .home-heading {
   color: #ff004f;
   font-size: 50px;
@@ -27,8 +31,30 @@
 }
 
 #about {
-  padding: 80px 0;
+
   color: #ababab;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  height: 50vh;
+  margin-bottom: 50px;
+}
+.home-pg{
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  
+
 }
 
 .row {
@@ -38,31 +64,42 @@
 }
 
 .col-1 {
-  flex-basis: 35%;
-  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 250px;
 }
+
 
 .phone-image {
-  width: 100%;
+  height:fit-content;
   border-radius: 15px;
-  height: 300px;
+
 }
 
-.col-2 {
-  flex-basis: 60%;
+.col-2 p{
+  /* flex-basis: 60%; */
+  width: 350px;
+  font-size: larger;
+ 
 }
 
 #services {
   padding: 30px 0;
-  
+  margin-top: 200px;
+
 }
+
+
+
 
 .services-list {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 30px;
   margin-top: 50px;
-  
+
 }
 
 .services-list div {
@@ -87,8 +124,9 @@
   margin-bottom: 15px;
   color: #ff004f;
 }
-.services-list div li{
-  color:white;
+
+.services-list div li {
+  color: white;
   font-size: 20px;
 }
 
@@ -101,11 +139,22 @@
 }
 
 
+.contact-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.email-phone{
+  display: flex;
+}
 
 
 .contact-left p {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 30px; 
+   margin-left: 30px;
+
+
 }
 
 .contact-left p i {
@@ -116,18 +165,22 @@
 
 .social-icons {
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 90px;
+  /* margin-left: 30px; */
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   margin-right: 15px;
   color: #ababab;
-  display: inline-block;
+
   transition: transform 0.5s;
-  
+
 }
 
-.social-icon{
-  margin-right: 20px;
+.social-icon {
+  margin-right: 50px;
 }
 
 .social-icons :hover {
@@ -136,4 +189,3 @@
   cursor: pointer;
   transition: transform 0.5s;
 }
-

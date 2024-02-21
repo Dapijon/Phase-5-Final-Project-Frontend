@@ -1,11 +1,29 @@
+.nav-items{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  margin-top: 12px;
+ 
+}
+.nav-img{
+  height: 70px;
+}
 
+.header-icon{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;;
+  align-items: center;
+}
 .navbar {
     
-    color: #fff;
+    color: #f20404;
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
   
@@ -13,7 +31,7 @@
     list-style: none;
     display: flex;
     justify-content: space-around; 
-    margin-left: 80%;
+  
   }
   
   .nav-item {
@@ -34,6 +52,4 @@
     transition: 0.5s;
   }
   
-  .link-margin{
-    margin-right: 30px;
-  }
+ 

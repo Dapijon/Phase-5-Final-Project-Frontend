@@ -9,22 +9,11 @@ import { FaInstagram } from "react-icons/fa";
 
 function Home() {
   return (
-    <>
-      <div className="header">
-        <img
-          className="image"
-          src="https://cdn-icons-png.freepik.com/256/10383/10383229.png"
-        ></img>
-        
-        <div className="home-header">
-        <h1 className="home-heading">PINACLE FINANCE </h1>
-        <p> Experience the best in mobile banking</p>
-        </div>
-        
-      </div>
+    <div className="home-pg">
+   
       <div id="about">
         <div className="container">
-          <div className="row"></div>
+          <div className="content">
           <div className="col-1">
             <h2 className="h2"> THE FUTURE OF MOBILE BANKING</h2>
             <img
@@ -46,7 +35,8 @@ function Home() {
               offering a comprehensive set of features that empower you to take
               control of your finances from the palm of your hand.
             </p>
-          </div>
+            </div>
+            </div>
         </div>
       </div>
 
@@ -90,10 +80,13 @@ function Home() {
       <div id="contacts">
         <div className="row">
           <div className="contact-left">
-             <h1>Contact Us</h1>
-             <p>pinaclefinance@gmail.com</p>
-             <p>0745889435</p>
-             <div className="social-icons">
+            <div> <h1>Contact Us</h1></div>
+            <div className="email-phone">
+              <p>pinaclefinance@gmail.com</p>
+              <p>0745889435</p>
+            </div >
+            <div className="social-icons">
+           
              <FaFacebook className="social-icon"/>
              <FaTwitter className="social-icon" />
              <FaInstagram  className="social-icon"/>
@@ -101,7 +94,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
