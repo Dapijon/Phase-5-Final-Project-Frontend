@@ -180,7 +180,6 @@ function SignUp() {
                 )}
               </Form.Group>
               
-              /*changed the button component here*/
               <button className="custom-button" type="submit">
                 Sign Up
               </button>

@@ -3,7 +3,6 @@
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end; /* Align items to the right */
-  margin-left: 70%;
 }
 
 .navbar-links {
@@ -27,8 +26,9 @@
   color: #fff;
   text-align: center;
   text-decoration: none;
+  border-radius: 20px;
 }
 
 .nav-item a:hover {
-  background-color: #777;
+  background-color: #e83fbd;
 }
