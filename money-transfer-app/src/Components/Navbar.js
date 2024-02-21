@@ -6,8 +6,22 @@ import "./Navbar.css";
 function Navbar() {
   //const [logged] = useAuth();
   return (
-    <div>
-      <nav className="navbar">
+
+    <div className="nav-items">
+      <div className="header-icon">
+        <img
+          className="nav-img"
+          src="https://cdn-icons-png.freepik.com/256/10383/10383229.png"
+        ></img>
+
+        <div className="nav-header">
+          <h1 className="home-heading">PINACLE FINANCE </h1>
+          <p> Experience the best in mobile banking</p>
+        </div>
+
+      </div>
+      <nav className="navbar ">
+
         <ul className="navbar-links">
           <li className="nav-item">
             <Link to="/signup">Sign Up</Link>

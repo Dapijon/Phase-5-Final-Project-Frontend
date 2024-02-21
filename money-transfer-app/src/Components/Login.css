@@ -1,4 +1,5 @@
 .container {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,3 +65,29 @@
     }
   }
   
+
+    height: 90vh;
+}
+
+.lg-btn {
+    background: greenyellow;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+    background-color: white;
+}
+
+.error {
+    color: #ff004f;
+}
+
+.heading {
+    color: #ff004f
+}
+

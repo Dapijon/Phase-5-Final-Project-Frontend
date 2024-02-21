@@ -50,6 +50,7 @@ function SignUp() {
 
   return (
     <div className="container">
+
       <div className="form-contents">
         <Card className="card">
           <Card.Body>
@@ -181,6 +182,7 @@ function SignUp() {
               </Form.Group>
               
               <button className="custom-button" type="submit">
+
                 Sign Up
               </button>
             </form>

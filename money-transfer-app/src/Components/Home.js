@@ -9,6 +9,7 @@ import { FaInstagram } from "react-icons/fa";
 
 function Home() {
   return (
+
     <>
       <div className="header">
         <img
@@ -44,6 +45,7 @@ function Home() {
     </div>
   </div>
 </div>
+
 
 
 
@@ -87,10 +89,13 @@ function Home() {
       <div id="contacts">
         <div className="row">
           <div className="contact-left">
-             <h1>Contact Us</h1>
-             <p>pinaclefinance@gmail.com</p>
-             <p>0745889435</p>
-             <div className="social-icons">
+            <div> <h1>Contact Us</h1></div>
+            <div className="email-phone">
+              <p>pinaclefinance@gmail.com</p>
+              <p>0745889435</p>
+            </div >
+            <div className="social-icons">
+           
              <FaFacebook className="social-icon"/>
              <FaTwitter className="social-icon" />
              <FaInstagram  className="social-icon"/>
@@ -98,7 +103,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

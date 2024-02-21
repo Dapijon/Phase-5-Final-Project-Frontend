@@ -1,7 +1,21 @@
+
+* {
+    color: white;
+
+}
+
+
+.sign-up{
+    
+    margin-bottom: 30px;
+}
+
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: 100vh;
   }
   
@@ -51,3 +65,39 @@
     }
   }
   
+
+
+}
+
+.signup-btn {
+    /* background-color: #ff004f; */
+    background-color: #00ff62;
+    
+    border-radius: 10px;
+    border: none;
+    
+}
+
+.heading {
+    color: #ff004f;
+}
+
+.form-control {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(53, 50, 50);
+    width: 150%;
+}
+
+.button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+    background-color: white;
+}
+
+.link {
+    color: #ff004f;
+}
+
