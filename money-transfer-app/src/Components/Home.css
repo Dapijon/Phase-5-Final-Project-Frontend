@@ -1,139 +1,158 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* HEADER */
 .header {
-  display: flex;
-  align-items: center;
-}
-
-.phone-image {
-  max-width: 100%;
-}
-
-.h2{
-  color: #ff004f;
+  position: relative; 
+  z-index: 1; 
+  background-color: #262626;
+  color: white;
+  padding: 25px;
 }
 
 .image {
   height: 80px;
   width: 80px;
-  margin-right: 40px;
+  margin-right: 20px;
+  float: left;
 }
 
-.home-heading{
-  align-items: center;
+.home-header {
+  flex-grow: 1;
 }
+
 .home-heading {
-  color: #ff004f;
-  font-size: 50px;
+  color: #fd0050;
+  font-size: 24px;
+  margin: 0;
+  text-decoration-thickness: 3px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* ABOUT SECTION */
+.home-heading-2 {
+  text-align: left;
+  color: #000;
+  margin-top: -15%;
+  margin-left: -10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+  font-size: 45px;
+}
+
+.container {
+  display: flex; 
+  flex-direction: column;
   align-items: center;
 }
 
-#about {
-  padding: 80px 0;
-  color: #ababab;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.col-1 {
-  flex-basis: 35%;
-  margin-right: 40px;
+.container p {
+  color: #000000; 
+  font-size: 25px; 
+  line-height: 1.5; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  margin-left: 30%;
+  margin-right: -10%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .phone-image {
-  width: 100%;
-  border-radius: 15px;
-  height: 300px;
+  width: 150%; 
+  height: auto; 
+  border-radius: 8px; 
+  margin-bottom: -30px; 
+  margin-left: -20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.col-2 {
-  flex-basis: 60%;
-}
-
+/* SERVICES */
 #services {
-  padding: 30px 0;
-  
+  background-color: #212121;
+  color: white;
+  padding: 40px 0;
+  margin-top: -10px;
+}
+
+#services h1 {
+  color: #ff004f;
+  margin-left: 10px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .services-list {
   display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 30px;
-  margin-top: 50px;
-  
+  flex-wrap: wrap;
 }
 
 .services-list div {
-  background: #262626;
-  padding: 40px;
-  font-size: 13px;
-  font-weight: 300;
-  border-radius: 10px;
-  transition: background 0.5s, transform 0.5s;
+  flex-basis: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  padding: 100px;
+  background-color: #333;
+  border-radius: 5px;
+  margin-top: -29%;
 }
 
 .i {
-  font-size: 50px;
-  margin-bottom: 30px;
-  height: 90px;
-  width: 70px;
+  color: #ff004f;
+  font-size: 32px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .services-list div h2 {
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 15px;
   color: #ff004f;
-}
-.services-list div li{
-  color:white;
   font-size: 20px;
+  margin: 10px 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-
-
-.services-list div:hover {
-  background: #ff004f;
-  transform: translateY(-10px);
+.services-list div li {
   color: white;
+  font-family: 'Times New Roman', Times, serif;
 }
 
+/* CONTACTS */
+#contacts {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 40px 0;
+  margin-top: -20%;
+}
 
+.contact-left {
+  margin-left: 20px;
+}
 
+.contact-left h1 {
+  color: #ff004f;
+  margin: 0 0 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+}
 
 .contact-left p {
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-.contact-left p i {
-  color: #ff004f;
-  margin-right: 15px;
-  font-size: 25px;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .social-icons {
-  margin-top: 30px;
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 30px;
-  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 24px;
   color: #ababab;
-  display: inline-block;
-  transition: transform 0.5s;
-  
+  margin-right: 10px;
 }
 
-.social-icon{
-  margin-right: 20px;
-}
-
-.social-icons :hover {
+.social-icon:hover {
   color: #ff004f;
-  transform: translateY(-5px);
-  cursor: pointer;
-  transition: transform 0.5s;
 }
-
