@@ -1,20 +1,17 @@
-/* TransactionPage styling */
-
 .transaction-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white; 
+    justify-content: center;
+    height: 100vh;
+    width: 100%; /* Set a fixed width */
+    max-width: 700px; /* Adjust as needed */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: -7%;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-h1 {
-    margin-top: 0;
-    color: #ff0000;
+h2, h1, .card {
+    text-align: center;
 }
 
 .card {
@@ -22,17 +19,12 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    width: 700px;
-    max-width: 90%;
+    width: 100%; /* Take full width of the container */
     margin-bottom: 20px;
-    flex-direction: column; 
-    align-items: center; 
 }
 
 .card h3 {
     color: #ff004f;
-    text-align: center;
-    margin-top: auto;
 }
 
 .card form {
@@ -41,25 +33,23 @@ h1 {
     gap: 10px;
 }
 
-.card form label {
+.card label {
     margin-bottom: 5px;
 }
 
-.card form input {
+.card input {
     padding: 8px;
     border-radius: 5px;
     border: none;
-    background-color: rgb(99, 97, 97);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-left: 1%;
-    justify-content: center;
 }
 
 .form-buttons {
     display: flex;
     justify-content: center;
     margin-left: 1px;
-    color: #ff004f;
 }
 
 .button {
@@ -87,5 +77,5 @@ h1 {
 }
 
 .favorites-list li {
-    margin-bottom: 5px;
+    margin-bottom: 50px;
 }

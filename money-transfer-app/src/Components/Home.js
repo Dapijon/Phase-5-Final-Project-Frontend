@@ -11,40 +11,29 @@ function Home() {
   return (
 
     <>
-      <div className="header">
-        <img
-          className="image"
-          src="https://cdn-icons-png.freepik.com/256/10383/10383229.png"
-        ></img>
-        
-        <div className="home-header">
-        <h1 className="home-heading">PINACLE FINANCE </h1>
-        <p> Experience the best in mobile banking</p>
-        </div>
-        
-      </div>
+     
       <div id="about" class="container">
-  <div class="row">
-    <div class="col-12">
-      <h2 class="home-heading-2">THE FUTURE OF MOBILE BANKING</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <img class="phone-image" src="https://www.shutterstock.com/image-photo/mobile-shopping-cheerful-arabic-woman-600nw-2108487698.jpg" alt="Mobile Shopping" />
-    </div>
-    <div class="col-6">
-      <p>
-        In the fast-paced world we live in, managing your finances should be effortless and tailored to your lifestyle. 
-        That's why we are excited to introduce the Pinacle Mobile Banking App – your one-stop solution for secure, 
-        convenient, and efficient banking on the go. 
-        At Pinacle, we understand the importance of having seamless access to your accounts, making transactions, 
-        and staying on top of your financial goals. Our mobile app is designed with you in mind, offering a 
-        comprehensive set of features that empower you to take control of your finances from the palm of your hand.
-      </p>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="col-12">
+            <h2 class="home-heading-2">THE FUTURE OF MOBILE BANKING</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <img class="phone-image" src="https://www.shutterstock.com/image-photo/mobile-shopping-cheerful-arabic-woman-600nw-2108487698.jpg" alt="Mobile Shopping" />
+          </div>
+          <div class="col-6">
+            <p>
+              In the fast-paced world we live in, managing your finances should be effortless and tailored to your lifestyle.
+              That's why we are excited to introduce the Pinacle Mobile Banking App – your one-stop solution for secure,
+              convenient, and efficient banking on the go.
+              At Pinacle, we understand the importance of having seamless access to your accounts, making transactions,
+              and staying on top of your financial goals. Our mobile app is designed with you in mind, offering a
+              comprehensive set of features that empower you to take control of your finances from the palm of your hand.
+            </p>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -95,15 +84,16 @@ function Home() {
               <p>0745889435</p>
             </div >
             <div className="social-icons">
-           
-             <FaFacebook className="social-icon"/>
-             <FaTwitter className="social-icon" />
-             <FaInstagram  className="social-icon"/>
-             </div>
+
+              <FaFacebook className="social-icon" />
+              <FaTwitter className="social-icon" />
+              <FaInstagram className="social-icon" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    
+          </>
   );
 }
 
