@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button, Alert, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
 
 function SignUp() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -31,16 +32,16 @@ function SignUp() {
         body: JSON.stringify(body),
       };
 
-      fetch("/signup", requestOptions)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setServerResponse(data.message);
-          console.log(serverResponse);
+      fetch("http://localhost:5000/auth/register", requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setServerResponse(data.message);
+        setShow(true);
 
-          setShow(true);
-        })
-        .catch((err) => console.log(err));
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
 
       reset();
     } else {
