@@ -26,13 +26,15 @@ function Login() {
       body: JSON.stringify(data)
     };
 
-    fetch('/login', requestOptions)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.access_token);
-        navigate('/');
-      });
-    reset();
+    fetch("http://localhost:5000/auth/register", requestOptions)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.message);
+      navigate('/'); 
+    })
+    .catch((err) => console.log(err));
+
+  reset();
   };
 
   return (
