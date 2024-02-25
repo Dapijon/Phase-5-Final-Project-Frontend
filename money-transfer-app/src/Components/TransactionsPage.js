@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "./TransactionsPage.css"
+import axios from 'axios';
+import "./TransactionsPage.css";
 
 const TransactionPage = () => {
   const [depositAmount, setDepositAmount] = useState('');
@@ -12,27 +13,42 @@ const TransactionPage = () => {
     event.preventDefault();
     console.log('Deposit amount:', depositAmount);
 
-    // Update account balance
-    setAccountBalance(prevBalance => prevBalance + parseFloat(depositAmount));
+    // Send deposit request to backend
+    axios.post('http://localhost:5000/transactions/deposit', { amount: depositAmount })
+
+      .then(response => {
+        console.log(response.data);
+        // Update account balance
+        setAccountBalance(prevBalance => prevBalance + parseFloat(depositAmount));
+      })
+      .catch(error => {
+        console.error('Error depositing:', error);
+      });
   };
 
   const handleTransferSubmit = (event) => {
     event.preventDefault();
     console.log('Phone number:', phoneNumber);
     console.log('Transfer amount:', transferAmount);
-    
-    // Update account balance
-    setAccountBalance(prevBalance => prevBalance - parseFloat(transferAmount));
 
-    // Clear the phone number and transfer amount inputs
-    setPhoneNumber('');
-    setTransferAmount('');
+    // Send transfer request to backend
+    axios.post(`/transactions/cash_transfer/${phoneNumber}/${transferAmount}`)
+      .then(response => {
+        console.log(response.data);
+        // Update account balance
+        setAccountBalance(prevBalance => prevBalance - parseFloat(transferAmount));
+        // Clear the phone number and transfer amount inputs
+        setPhoneNumber('');
+        setTransferAmount('');
+      })
+      .catch(error => {
+        console.error('Error transferring:', error);
+      });
   };
 
   const addToFavorites = () => {
     // Add phone number to favorites
     setFavorites(prevFavorites => [...prevFavorites, phoneNumber]);
-
     // Clear the phone number input
     setPhoneNumber('');
   };
