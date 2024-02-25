@@ -21,28 +21,29 @@ function Login() {
     const requestOptions = {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     };
 
-    fetch('/login', requestOptions)
+    fetch('http://127.0.0.1:5000/auth/login', requestOptions)
       .then(res => res.json())
       .then(data => {
         console.log(data.access_token);
-        navigate('/');
+        navigate('/analytics');
       });
     reset();
+    console.log('sent')
   };
 
   return (
     <div className="container">
 
- 
+
       <div className="form">
         <h1 className="heading">Login </h1>
         <form>
-        <Form.Group>
+          <Form.Group>
             <Form.Label>Email Address: <span>  <br></br>  </span></Form.Label>
             <Form.Control
               type="email"
@@ -93,8 +94,8 @@ function Login() {
               variant="primary"
               size='lg'
               onClick={handleSubmit(loginUser)}
-             
-            
+
+
             >
               Login
             </Button>
