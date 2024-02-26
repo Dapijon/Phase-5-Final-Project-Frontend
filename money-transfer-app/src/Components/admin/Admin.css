@@ -1,0 +1,45 @@
+.admin{
+    padding: 20px;
+    overflow: auto;
+}
+.admin-pg {
+    height: 69vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    
+
+}
+
+.search-bar input {
+    margin-left: 20px;
+    color: black;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #4CAF50;
+    /* Green background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.admin-pg .AdminUserCard {
+
+    max-height: 100px;
+    overflow: hidden;
+}

@@ -1,0 +1,29 @@
+.user-card {
+    display: inline-block;
+    border: 1px solid lightslategray;
+    color: black;    
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    max-height: 250px;
+    overflow: hidden;
+    
+}
+
+.make-admin {
+    border: none;
+    background-color: #5BF36A;
+    display: block;
+    margin:10px auto ;
+   
+
+}
+
+.danger {
+    background-color: black;
+    color: red;
+    border-radius: 5px;
+    display: block;
+    margin:auto ;
+}
