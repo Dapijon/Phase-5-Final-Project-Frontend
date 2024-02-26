@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Alert, Card } from "react-bootstrap";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
 
@@ -20,10 +20,12 @@ function SignUp() {
       const body = {
         first_name: data.first_name,
         last_name: data.last_name,
-        date_of_birth: data.date_of_birth,
-        id_number: data.id_number,
+        dob: data.date_of_birth,
+        national_ID: data.id_number,
         email: data.email,
         password: data.password,
+        phoneNumber: data.phoneNumber,
+        transaction_password: data.transaction_password,
       };
 
       const requestOptions = {
@@ -33,15 +35,15 @@ function SignUp() {
       };
 
       fetch("http://localhost:5000/auth/register", requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setServerResponse(data.message);
-        setShow(true);
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setServerResponse(data.message);
+          setShow(true);
 
-        navigate("/login");
-      })
-      .catch((err) => console.log(err));
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
 
       reset();
     } else {
@@ -51,7 +53,6 @@ function SignUp() {
 
   return (
     <div className="container">
-
       <div className="form-contents">
         <Card className="card">
           <Card.Body>
@@ -150,6 +151,36 @@ function SignUp() {
               </Form.Group>
 
               <Form.Group>
+                <Form.Label>Phone Number:</Form.Label>
+                <Form.Control
+                  type="tel"
+                  placeholder="Your phone number"
+                  {...register("phoneNumber", { required: true, maxLength: 15 })}
+                />
+                {errors.phoneNumber && (
+                  <p className="error">Phone Number is required</p>
+                )}
+                {errors.phoneNumber?.type === "maxLength" && (
+                  <p className="error">Max characters should be 15</p>
+                )}
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>Transaction Password:</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Your transaction password"
+                  {...register("transaction_password", { required: true, minLength: 8 })}
+                />
+                {errors.transaction_password && (
+                  <p className="error">Transaction Password is required</p>
+                )}
+                {errors.transaction_password?.type === "minLength" && (
+                  <p className="error">Min characters should be 8</p>
+                )}
+              </Form.Group>
+
+              <Form.Group>
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
                   type="password"
@@ -181,11 +212,10 @@ function SignUp() {
                   <p className="error">Min characters should be 8</p>
                 )}
               </Form.Group>
-              
-              <button className="custom-button" type="submit">
 
+              <Button className="custom-button" type="submit">
                 Sign Up
-              </button>
+              </Button>
             </form>
 
             <Form.Group>

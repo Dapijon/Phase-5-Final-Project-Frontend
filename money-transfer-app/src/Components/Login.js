@@ -16,7 +16,7 @@ function Login() {
   const navigate = useNavigate();
 
   const loginUser = (data) => {
-    console.log(data)
+    console.log(data);
 
     const requestOptions = {
       method: 'POST',
@@ -27,19 +27,24 @@ function Login() {
     };
 
     fetch('http://127.0.0.1:5000/auth/login', requestOptions)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
       .then(data => {
         console.log(data.access_token);
         navigate('/analytics');
+        reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
       });
-    reset();
-    console.log('sent')
   };
 
   return (
     <div className="container">
-
-
       <div className="form">
         <h1 className="heading">Login </h1>
         <form>
@@ -50,13 +55,11 @@ function Login() {
               placeholder="Your email"
               {...register("email", { required: true, maxLength: 80 })}
             />
-
             {errors.email && (
               <p style={{ color: "red" }}>
                 <small className="error">Email is required</small>
               </p>
             )}
-
             {errors.email?.type === "maxLength" && (
               <p style={{ color: "red" }}>
                 <small className="error">Max characters should be 80</small>
@@ -64,7 +67,6 @@ function Login() {
             )}
           </Form.Group>
           <br />
-
           <Form.Group>
             <Form.Label>Password: <span>  <br></br>  </span></Form.Label>
             <Form.Control
@@ -72,44 +74,36 @@ function Login() {
               placeholder="Your password"
               {...register("password", { required: true, minLength: 8 })}
             />
-
             {errors.password && (
               <p style={{ color: "red" }}>
                 <small className="error">Password is required</small>
               </p>
             )}
-
             {errors.password?.type === "minLength" && (
               <p style={{ color: "red" }}>
                 <small className="error">Min characters should be 8</small>
               </p>
             )}
           </Form.Group>
-
           <br />
-
           <Form.Group>
-            <Button className="lg-btn"
+            <Button
+              className="lg-btn"
               type="button"
               variant="primary"
               size='lg'
               onClick={handleSubmit(loginUser)}
-
-
             >
               Login
             </Button>
           </Form.Group>
-
           <br />
-
           <Form.Group>
             <small>
               Do not have an account? <Link className="link" to="/signup">Create One</Link>
             </small>
           </Form.Group>
         </form>
-
       </div>
     </div>
   );
