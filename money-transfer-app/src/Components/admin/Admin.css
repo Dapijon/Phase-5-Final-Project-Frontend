@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+.pagination button:hover{
+   background-color: #8ceb8f;
+}
+
 .admin-pg .AdminUserCard {
 
     max-height: 100px;

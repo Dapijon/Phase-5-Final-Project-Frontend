@@ -133,6 +133,11 @@ const Admin = () => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
+    const handleCardClick = (user) => {
+        console.log('user clicked: ', user);
+    }
+
+
     return (
         <> <div className='admin'>
             <div className='search-bar'>
@@ -146,7 +151,7 @@ const Admin = () => {
             <div className='admin-pg'>
                 {
                     currentUsers.map((user, i) => (
-                        <AdminUserCard user={user} key={i} />
+                        <AdminUserCard user={user} key={i} onClick={() => handleCardClick(user)} />
                     ))
                 }
             </div>
@@ -158,7 +163,7 @@ const Admin = () => {
                     ))
                 }
             </div>
-           </div>
+        </div>
 
         </>
     )
