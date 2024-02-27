@@ -21,6 +21,20 @@
     border-radius: 5px;
    
 }
+.remove-admin {
+    border: none;
+    background-color: #5bf398;
+    display: block;
+    margin:10px auto ;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.remove-admin:hover{
+    background-color: #5bf398;
+    color: black;
+}
 
 .make-admin:hover{
     background-color: #05a115;

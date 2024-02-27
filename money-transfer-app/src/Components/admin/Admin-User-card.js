@@ -6,9 +6,28 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AdminUserCard = ({ user, onClick }) => {
 
-    const handleMakeAdmin = (email) => {
-        console.log(email);
-    }
+    const handleMakeAdmin = async (userId) => {
+        try {
+            console.log(`user id : ${userId}`)
+            const response = await axios.put(`http://127.0.0.1:5000/summary/make-admin/${userId}`);
+            console.log('User has been made admin');
+          
+        } catch (error) {
+            console.error('Error making user admin:', error);
+            
+        }
+    };
+
+    const handleRemoveAdmin = async (userId) => {
+        try {
+            const response = await axios.put(`http://127.0.0.1:5000/summary/remove-admin/${userId}`);
+            console.log('Admin status removed successfully');
+           
+        } catch (error) {
+            console.error('Error removing admin status:', error);
+           
+        }
+    };
 
 
     const deleteUser = async (userId) => {
@@ -50,7 +69,11 @@ const AdminUserCard = ({ user, onClick }) => {
                 Balance: Ksh/- {user.balance.toLocaleString()}
             </div>
 
-            <button className='make-admin' onClick={() => handleMakeAdmin(user.email)}>Make Admin</button>
+            {
+                user.is_admin ?
+                    <button className='remove-admin' onClick={() => handleMakeAdmin(user.id)}>Remove Admin</button> :
+                    <button className='make-admin' onClick={() => handleRemoveAdmin(user.id)}>Make Admin</button>
+            }
             <button className='danger' onClick={handleDeleteUser}>Delete</button>
 
 

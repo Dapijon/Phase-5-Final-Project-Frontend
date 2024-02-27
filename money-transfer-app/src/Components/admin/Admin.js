@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AdminUserCard from './Admin-User-card'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
@@ -136,15 +136,19 @@ const Admin = () => {
         }
     };
 
-    fetchUsers()
-        .then(users => {
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:5000/summary/users');
+                const users = response.data;
+                setUsers(users);
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        };
 
-            //   console.log('Users retrieved:', users);
-            setUsers(users);
-        })
-        .catch(error => {
-            console.error('Error fetching users:', error);
-        });
+        fetchUsers();
+    }, []); 
 
     const filteredUsers = users.filter(user => {
         const fullName = `${user.first_name} ${user.last_name}`;
