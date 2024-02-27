@@ -71,8 +71,8 @@ const AdminUserCard = ({ user, onClick }) => {
 
             {
                 user.is_admin ?
-                    <button className='remove-admin' onClick={() => handleMakeAdmin(user.id)}>Remove Admin</button> :
-                    <button className='make-admin' onClick={() => handleRemoveAdmin(user.id)}>Make Admin</button>
+                    <button className='remove-admin' onClick={() => handleRemoveAdmin(user.id)}>Remove Admin</button> :
+                    <button className='make-admin' onClick={() => handleMakeAdmin(user.id)}>Make Admin</button>
             }
             <button className='danger' onClick={handleDeleteUser}>Delete</button>
 
