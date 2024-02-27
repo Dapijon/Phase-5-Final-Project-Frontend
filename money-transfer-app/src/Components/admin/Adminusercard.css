@@ -8,6 +8,7 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     max-height: 250px;
     overflow: hidden;
+    min-width: 270px;
     
 }
 
@@ -16,11 +17,14 @@
     background-color: #5BF36A;
     display: block;
     margin:10px auto ;
+    border: none;
+    border-radius: 5px;
    
 }
 
 .make-admin:hover{
     background-color: #05a115;
+    color: black;
 }
 
 .danger:hover{
