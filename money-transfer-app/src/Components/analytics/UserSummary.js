@@ -12,7 +12,7 @@ function UserSummary() {
         <tr>         
           <th>Received</th>
           <th>Sent</th>
-          <th>Total</th>
+          <th>Balance</th>
         </tr>
       </thead>
       <tbody>
