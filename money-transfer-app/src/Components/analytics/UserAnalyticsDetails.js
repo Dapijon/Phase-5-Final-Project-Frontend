@@ -53,24 +53,7 @@ const UserAnalyticsDetails = ({ trans }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <tr>
-
-                        <td>John Doe</td>
-                        <td>John Doe</td>
-                        <td>0722 000 000</td>
-                        <td> -</td>
-                        <td>KSHS 1,000</td>
-                        <td>12/02/24 12:43pm</td>
-                    </tr>
-                    <tr>
-
-                        <td>John Doe</td>
-                        <td>John Doe</td>
-                        <td> -</td>
-                        <td> 0722 111 111</td>
-                        <td>KSHS 1,000</td>
-                        <td>12/02/24 12:43pm</td>
-                    </tr> */}
+                    
 
                     {transactionlist}
 

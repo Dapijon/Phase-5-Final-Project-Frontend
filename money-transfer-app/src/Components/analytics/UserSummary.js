@@ -1,7 +1,9 @@
 import Table from 'react-bootstrap/Table';
 import './userSummary.css'
 
-function UserSummary() {
+function UserSummary({userSummary}) {
+
+  console.log(userSummary)
   return (
     <div className='userSummary' >
       <h4>
@@ -18,9 +20,9 @@ function UserSummary() {
       <tbody>
         <tr className='summary'>
           
-          <td>KSHS 124,520</td>
-          <td>KSHS 350,480</td>
-          <td>KSHS 475,000</td>
+          <td> KSHS {userSummary?.received_amount}</td>
+          <td>KSHS {userSummary?.send_amount}</td>
+            <td>KSHS {userSummary?.total_balance}</td>
         </tr>
        
       </tbody>
