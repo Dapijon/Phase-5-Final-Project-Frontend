@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: deploy to render
-        uses: leonk/render-deploy-action@v0.0.8
+        uses: Dapijon/Phase-5-Final-Project-Frontend/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
