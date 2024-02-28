@@ -6,8 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserSummary from './UserSummary'
 import UserAnalyticsDetails from './UserAnalyticsDetails';
+import axios from 'axios'
 
 const Analytics = () => {
+  const userId = 3
     const [transactions, setTransactions] = useState([]);
     const [loading, setLoading] = useState(true);
   // const transactions = 
@@ -421,7 +423,7 @@ const Analytics = () => {
             setTransactions(response.data);
             setLoading(false);
         } catch (error) {
-            setError(error.response.data.error);
+            // setError(error.response.data.error);
             setLoading(false);
         }
     };

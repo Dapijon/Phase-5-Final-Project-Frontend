@@ -3,6 +3,8 @@ import { Form, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import { signInReducer } from "../app/authSlice";
+import { UseDispatch} from "react-redux";
 import "./Login.css";
 
 function Login() {
@@ -42,6 +44,13 @@ function Login() {
         console.error('Error:', error);
       });
   };
+
+
+  // handle sign in using redux
+
+  const handleLogin = () => {
+    dispatchEvent(signInReducer())
+  }
 
   return (
     <div className="container">
