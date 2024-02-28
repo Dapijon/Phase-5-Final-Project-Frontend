@@ -21,6 +21,7 @@ jobs:
 
     steps:
       - name: deploy to render
+        uses: actions/checkout@v3
         with:
           service-id: ${{ secrets.SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
