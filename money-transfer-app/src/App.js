@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import TransactionPage from './Components/TransactionsPage';
 import UserProfile from './Components/UserProfile';
+import ParentComponent from './Components/ParentComponent';
 
 function App() {
   return (
@@ -14,16 +15,15 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/signup" element={<SignUp/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/userprofile" element={<UserProfile/>}></Route>
-
-          <Route path="/analytics" element={<Analytics/>}></Route>
-
-          <Route path='/transactions' element={<TransactionPage />} />
-
-        </Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path="/signup" element={<SignUp/>}></Route>
+            <Route path="/login" element={<ParentComponent />}>
+             <Route index element={<Login />} />
+            </Route>
+            <Route path="/userprofile" element={<UserProfile/>}></Route>
+            <Route path="/analytics" element={<Analytics/>}></Route>
+            <Route path='/transactions' element={<TransactionPage />} />
+</Routes>
       </Router>
     </div>
   );

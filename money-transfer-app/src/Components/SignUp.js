@@ -54,8 +54,6 @@ function SignUp() {
   return (
     <div className="container">
       <div className="form-contents">
-        <Card className="card">
-          <Card.Body>
             {show ? (
               <>
                 <Alert
@@ -226,8 +224,6 @@ function SignUp() {
                 </Link>
               </small>
             </Form.Group>
-          </Card.Body>
-        </Card>
       </div>
     </div>
   );

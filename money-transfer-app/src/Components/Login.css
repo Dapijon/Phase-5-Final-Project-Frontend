@@ -1,92 +1,54 @@
+/* Login.css */
+
 .container {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .card {
-    width: 400px;
-    margin-top: 20px;
-  }
-  
-  .heading {
-    text-align: center;
-  }
-  
-  .form-contents {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .form-contents .card {
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .form-contents .card .card-body {
-    padding: 40px;
-  }
-  
-  .form-contents .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-  }
-  
-  .link {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .custom-button {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px 20px; 
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    border-radius: 5px;
-    cursor: pointer; 
-  }
-  
-  .custom-button:hover {
-    background-color: #0056b3; 
-  }
-  
-  @media (max-width: 576px) {
-    .card {
-      width: 90%;
-    }
-  }
-  
-
-
-
-.lg-btn {
-    background: greenyellow;
-    width: 100px;
-    border-radius: 10px;
-    border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.button:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    color: black;
-    background-color: white;
-}
-
-.error {
-    color: #ff004f;
+.form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -18%;
+  margin-bottom: 0%;
+  width: 400px;
 }
 
 .heading {
-    color: #ff004f
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
+.form label {
+  font-weight: bold;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  font-size: 0.8rem;
+}
+
+.lg-btn {
+  width: 100%;
+}
+
+.link {
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #0056b3;
+}

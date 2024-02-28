@@ -1,14 +1,15 @@
-import React from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import "./Login.css";
 
-function Login() {
+function Login({ setIsLoggedIn }) {
+  console.log("Props received in Login component:", setIsLoggedIn);
+
   const {
     register,
-    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -16,7 +17,7 @@ function Login() {
   const navigate = useNavigate();
 
   const loginUser = (data) => {
-    console.log(data);
+    console.log("Form data:", data);
 
     const requestOptions = {
       method: 'POST',
@@ -34,9 +35,13 @@ function Login() {
         return res.json();
       })
       .then(data => {
-        console.log(data.access_token);
-        navigate('/analytics');
-        reset();
+        console.log("Login Successful.", data);
+        if (typeof setIsLoggedIn === 'function') {
+          setIsLoggedIn(true);
+          navigate('/analytics');
+        } else {
+          console.error("setIsLoggedIn is not a function");
+        }
       })
       .catch(error => {
         console.error('Error:', error);
@@ -47,7 +52,7 @@ function Login() {
     <div className="container">
       <div className="form">
         <h1 className="heading">Login </h1>
-        <form>
+        <form onSubmit={handleSubmit(loginUser)}>
           <Form.Group>
             <Form.Label>Email Address: <span>  <br></br>  </span></Form.Label>
             <Form.Control
@@ -89,10 +94,9 @@ function Login() {
           <Form.Group>
             <Button
               className="lg-btn"
-              type="button"
+              type="submit" 
               variant="primary"
               size='lg'
-              onClick={handleSubmit(loginUser)}
             >
               Login
             </Button>

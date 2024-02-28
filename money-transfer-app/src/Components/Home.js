@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import { BsBank } from "react-icons/bs";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
@@ -35,8 +36,10 @@ function Home() {
         </div>
       </div>
 
-
-
+      <div className="home-buttons">
+        <Link to="/signup" className="btn btn-primary">Sign Up</Link>
+        <Link to="/login" className="btn btn-secondary">Login</Link>
+      </div>
 
       <div id="services">
         <h1> Our Services</h1>
