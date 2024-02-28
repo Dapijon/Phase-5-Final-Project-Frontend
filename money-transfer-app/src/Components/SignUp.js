@@ -34,7 +34,7 @@ function SignUp() {
         body: JSON.stringify(body),
       };
 
-      fetch("http://localhost:5000/auth/register", requestOptions)
+      fetch("http://127.0.0.1:5000/auth/register", requestOptions)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -142,9 +142,7 @@ function SignUp() {
                   placeholder="Your email"
                   {...register("email", { required: true, maxLength: 80 })}
                 />
-                {errors.email && (
-                  <p className="error">Email is required</p>
-                )}
+                {errors.email && <p className="error">Email is required</p>}
                 {errors.email?.type === "maxLength" && (
                   <p className="error">Max characters should be 80</p>
                 )}
@@ -155,7 +153,10 @@ function SignUp() {
                 <Form.Control
                   type="tel"
                   placeholder="Your phone number"
-                  {...register("phoneNumber", { required: true, maxLength: 15 })}
+                  {...register("phoneNumber", {
+                    required: true,
+                    maxLength: 15,
+                  })}
                 />
                 {errors.phoneNumber && (
                   <p className="error">Phone Number is required</p>
@@ -170,7 +171,10 @@ function SignUp() {
                 <Form.Control
                   type="password"
                   placeholder="Your transaction password"
-                  {...register("transaction_password", { required: true, minLength: 8 })}
+                  {...register("transaction_password", {
+                    required: true,
+                    minLength: 8,
+                  })}
                 />
                 {errors.transaction_password && (
                   <p className="error">Transaction Password is required</p>

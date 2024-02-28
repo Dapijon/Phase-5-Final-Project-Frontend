@@ -1,56 +1,74 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import "./TransactionsPage.css";
 
 const TransactionPage = () => {
-  const [depositAmount, setDepositAmount] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [transferAmount, setTransferAmount] = useState('');
+  const [depositAmount, setDepositAmount] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [transferAmount, setTransferAmount] = useState("");
   const [favorites, setFavorites] = useState([]);
   const [accountBalance, setAccountBalance] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleDepositSubmit = (event) => {
+  const handleDepositSubmit = async (event) => {
     event.preventDefault();
-    console.log('Deposit amount:', depositAmount);
+    console.log("Deposit amount:", depositAmount);
 
-    // Send deposit request to backend
-    axios.post('http://localhost:5000/transactions/deposit', { amount: depositAmount })
+    try {
+      setLoading(true);
 
-      .then(response => {
-        console.log(response.data);
-        // Update account balance
-        setAccountBalance(prevBalance => prevBalance + parseFloat(depositAmount));
-      })
-      .catch(error => {
-        console.error('Error depositing:', error);
+      const response = await axios.post("http://127.0.0.1:5000/makeDeposit", {
+        amount: depositAmount,
+        key: "SJFuEzKXob9ztiXh1nGKZCsAFT2BDbQmPGNpQOp95GKw7ASM",
+        secret:
+          "AtQ9sa581NtvO8YB4E9m5VYsATlBLQSCAuG6ryr7slpApSgWe6ASrFuISxN1kxsg",
       });
+
+      console.log(response.data);
+
+      setAccountBalance(
+        (prevBalance) => prevBalance + parseFloat(depositAmount)
+      );
+
+      setLoading(false);
+    } catch (error) {
+      console.error("Error depositing:", error);
+      setError("Error depositing. Please try again.");
+      setLoading(false);
+    }
   };
 
   const handleTransferSubmit = (event) => {
     event.preventDefault();
-    console.log('Phone number:', phoneNumber);
-    console.log('Transfer amount:', transferAmount);
+    console.log("Phone number:", phoneNumber);
+    console.log("Transfer amount:", transferAmount);
 
     // Send transfer request to backend
-    axios.post(`/transactions/cash_transfer/${phoneNumber}/${transferAmount}`)
-      .then(response => {
+    axios
+      .post(
+        `http://127.0.0.1:5000/cash_transfer/${phoneNumber}/${transferAmount}`
+      )
+      .then((response) => {
         console.log(response.data);
         // Update account balance
-        setAccountBalance(prevBalance => prevBalance - parseFloat(transferAmount));
+        setAccountBalance(
+          (prevBalance) => prevBalance - parseFloat(transferAmount)
+        );
         // Clear the phone number and transfer amount inputs
-        setPhoneNumber('');
-        setTransferAmount('');
+        setPhoneNumber("");
+        setTransferAmount("");
       })
-      .catch(error => {
-        console.error('Error transferring:', error);
+      .catch((error) => {
+        console.error("Error transferring:", error);
       });
   };
 
   const addToFavorites = () => {
     // Add phone number to favorites
-    setFavorites(prevFavorites => [...prevFavorites, phoneNumber]);
+    setFavorites((prevFavorites) => [...prevFavorites, phoneNumber]);
     // Clear the phone number input
-    setPhoneNumber('');
+    setPhoneNumber("");
   };
 
   return (
@@ -66,24 +84,24 @@ const TransactionPage = () => {
         <form onSubmit={handleDepositSubmit}>
           <label>
             Deposit Amount:
-            <input 
-              type="number" 
-              value={depositAmount} 
-              onChange={(event) => setDepositAmount(event.target.value)} 
+            <input
+              type="number"
+              value={depositAmount}
+              onChange={(event) => setDepositAmount(event.target.value)}
             />
           </label>
-          <button 
+          <button
             type="submit"
             className="button"
             style={{
-              backgroundColor: '#ff004f',
-              borderRadius: '20px',
-              color: 'black',
-              justifyItems: 'center',
-              marginLeft: '40%',
+              backgroundColor: "#ff004f",
+              borderRadius: "20px",
+              color: "black",
+              justifyItems: "center",
+              marginLeft: "40%",
             }}
           >
-            Deposit
+            {loading ? "Depositing..." : "Deposit"}
           </button>
         </form>
       </div>
@@ -94,42 +112,42 @@ const TransactionPage = () => {
         <form onSubmit={handleTransferSubmit}>
           <label>
             Phone Number:
-            <input 
-              type="text" 
-              value={phoneNumber} 
-              onChange={(event) => setPhoneNumber(event.target.value)} 
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={(event) => setPhoneNumber(event.target.value)}
             />
           </label>
           <label>
             Transfer Amount:
-            <input 
-              type="number" 
-              value={transferAmount} 
-              onChange={(event) => setTransferAmount(event.target.value)} 
+            <input
+              type="number"
+              value={transferAmount}
+              onChange={(event) => setTransferAmount(event.target.value)}
             />
           </label>
           <div className="form-buttons">
-            <button 
+            <button
               type="submit"
               className="button"
               style={{
-                backgroundColor: '#ff004f',
-                borderRadius: '20px',
-                color: 'black'
+                backgroundColor: "#ff004f",
+                borderRadius: "20px",
+                color: "black",
               }}
             >
               Send
             </button>
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={addToFavorites}
               className="button"
               style={{
-                backgroundColor: '#ff004f',
-                borderRadius: '20px',
-                color: 'black',
-                width: '150px',
-                marginLeft: '10px',
+                backgroundColor: "#ff004f",
+                borderRadius: "20px",
+                color: "black",
+                width: "150px",
+                marginLeft: "10px",
               }}
             >
               Add to Favorites
