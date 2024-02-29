@@ -8,6 +8,7 @@ import Home from './Components/Home';
 import TransactionPage from './Components/TransactionsPage';
 import UserProfile from './Components/UserProfile';
 import Admin from './Components/admin/Admin'
+import AdminSummary from './Components/all/AdminSummary';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
           <Route path="/analytics" element={<Analytics />}></Route>
           <Route path='/admin' element={<Admin />} />
+          <Route path='/all-summary' element={<AdminSummary />} />
 
           <Route path='/transactions' element={<TransactionPage />} />
 

@@ -16,7 +16,9 @@ const Analytics = () => {
   const transactions = useSelector((state) => state.analytics.transactions);
   const userSummary = useSelector((state) => state.userSummary.userSummary);
 
-  console.log(currentUser)
+  console.log('access', accessToken)
+  const decoded = jwtDecode(accessToken)
+  console.log('decoded',decoded)
 
   useEffect(() => {
     const fetchTransactions = async () => {
