@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../app/authSlice';
@@ -12,6 +12,7 @@ function Navbar() {
   const handleLogout = () => {
     
     dispatch(signOut());
+    Navigate('/')
   };
 
   return (
@@ -32,13 +33,13 @@ function Navbar() {
           {accessToken ? (
             <>
               <li className="nav-item">
-                <Link to="/analytics">Transactions</Link>
+                <Link to="/analytics">Analytics</Link>
               </li>
               <li className="nav-item">
                 <Link to="/admin">Users</Link>
               </li>
               <li className="nav-item">
-                <Link to="/send">Send</Link>
+                <Link to="/transactions">Transactions</Link>
               </li>
               <li className="nav-item">
             <button onClick={handleLogout}>Logout</button>
