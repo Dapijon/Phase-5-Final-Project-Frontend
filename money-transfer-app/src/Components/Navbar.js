@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../app/authSlice';
@@ -9,10 +9,12 @@ function Navbar() {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     
     dispatch(signOut());
-    Navigate('/')
+    navigate('/')
   };
 
   return (
