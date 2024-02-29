@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import TransactionPage from './Components/TransactionsPage';
 import UserProfile from './Components/UserProfile';
+import Admin from './Components/admin/Admin'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/userprofile" element={<UserProfile/>}></Route>
 
-          <Route path="/analytics" element={<Analytics/>}></Route>
+          <Route path="/analytics" element={<Analytics />}></Route>
+          <Route path='/admin' element={<Admin />} />
 
           <Route path='/transactions' element={<TransactionPage />} />
 

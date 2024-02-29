@@ -8,6 +8,18 @@
     max-width: 700px; /* Adjust as needed */
     margin: 0 auto; /* Center horizontally */
     margin-top: -7%;
+    color: black;
+}
+.transaction-container label{
+    color: black;
+
+}
+.transaction-container  .card{
+    background: none;
+}
+
+transaction-container input{
+    border-color: black;
 }
 
 h2, h1, .card {
@@ -41,7 +53,7 @@ h2, h1, .card {
     padding: 8px;
     border-radius: 5px;
     border: none;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     color: rgb(0, 0, 0);
     margin-left: 1%;
 }

@@ -1,0 +1,54 @@
+.user-card {
+    display: inline-block;
+    border: 1px solid lightslategray;
+    color: black;    
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    max-height: 250px;
+    overflow: hidden;
+    min-width: 270px;
+    
+}
+
+.make-admin {
+    border: none;
+    background-color: #5BF36A;
+    display: block;
+    margin:10px auto ;
+    border: none;
+    border-radius: 5px;
+   
+}
+.remove-admin {
+    border: none;
+    background-color: #5bf398;
+    display: block;
+    margin:10px auto ;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.remove-admin:hover{
+    background-color: #17eb6c;
+    color: black;
+}
+
+.make-admin:hover{
+    background-color: #05a115;
+    color: black;
+}
+
+.danger:hover{
+    background-color: rgb(106, 102, 102);
+}
+
+.danger {
+    background-color: black;
+    color: red;
+    border-radius: 5px;
+    display: block;
+    margin:auto ;
+}

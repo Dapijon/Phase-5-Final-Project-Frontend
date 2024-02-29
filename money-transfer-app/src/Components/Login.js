@@ -1,55 +1,47 @@
 import React from "react";
-import { Form, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom"; 
 import { useForm } from "react-hook-form";
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { signIn } from "../app/authSlice";
 import "./Login.css";
 
 function Login() {
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
 
-  const navigate = useNavigate();
+  const loginUser = async (data) => {
+    try {
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      };
 
-  const loginUser = (data) => {
-    console.log(data);
-
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
-
-    fetch('http://127.0.0.1:5000/auth/login', requestOptions)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then(data => {
-        console.log(data.access_token);
-        navigate('/analytics');
-        reset();
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+      const response = await fetch('http://127.0.0.1:5000/auth/login', requestOptions);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const responseData = await response.json();
+      console.log(responseData.access_token);
+      dispatch(signIn({ accessToken: responseData.access_token, user: responseData.user }));
+      navigate('/analytics');
+      reset();
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
     <div className="container">
       <div className="form">
-        <h1 className="heading">Login </h1>
-        <form>
+        <h1 className="heading">Login</h1>
+        <form onSubmit={handleSubmit(loginUser)}>
           <Form.Group>
-            <Form.Label>Email Address: <span>  <br></br>  </span></Form.Label>
+            <Form.Label>Email Address:</Form.Label>
             <Form.Control
               type="email"
               placeholder="Your email"
@@ -66,9 +58,8 @@ function Login() {
               </p>
             )}
           </Form.Group>
-          <br />
           <Form.Group>
-            <Form.Label>Password: <span>  <br></br>  </span></Form.Label>
+            <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
               placeholder="Your password"
@@ -85,18 +76,9 @@ function Login() {
               </p>
             )}
           </Form.Group>
-          <br />
-          <Form.Group>
-            <Button
-              className="lg-btn"
-              type="button"
-              variant="primary"
-              size='lg'
-              onClick={handleSubmit(loginUser)}
-            >
-              Login
-            </Button>
-          </Form.Group>
+          <Button type="submit" variant="primary" size="lg">
+            Login
+          </Button>
           <br />
           <Form.Group>
             <small>

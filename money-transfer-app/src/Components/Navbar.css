@@ -46,3 +46,8 @@
 .nav-item a:hover {
   background-color: #ff0000;
 }
+
+.nav-item-btn{
+  border: none;
+  background-color: #ee0996;
+}
