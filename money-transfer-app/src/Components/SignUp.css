@@ -1,103 +1,57 @@
-
-* {
-    color: white;
-
+.container-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 135vh;
+  background-color: #f0f0f000; /* Background color */
 }
 
-
-.sign-up{
-    
-    margin-bottom: 30px;
-}
-
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100vh;
-  }
-  
-  .card {
-    width: 450px;
-    margin-top: 20px;
-  }
-  
-  .heading {
-    text-align: center;
-  }
-  
-  .form-data {
-    margin-top: 20px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-    margin-top: 4px;
-  }
-  
-  .link {
-    color: #007afc;
-    text-decoration: none;
-  }
-  
-  .custom-button {
-    width: 60%;
-    margin-bottom: 10px;
-    padding: 10px 20px; 
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    border-radius: 5px;
-    cursor: pointer; 
-  }
-  
-  .custom-button:hover {
-    background-color: #0056b3; 
-  }
-  
-  
-  @media (max-width: 576px) {
-    .card {
-      width: 90%;
-    }
-  }
-  
-
-
-
-
-.signup-btn {
-    /* background-color: #ff004f; */
-    background-color: #00ff62;
-    
-    border-radius: 10px;
-    border: none;
-    
+.form-contents {
+  width: 400px;
+  padding: 20px;
+  margin-top: -10%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .heading {
-    color: #ff004f;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #f80000; /* Text color */
 }
 
-.form-control {
-    height: 30px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(53, 50, 50);
-    width: 150%;
+.form-data {
+  margin-bottom: 20px;
 }
 
-.button:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    color: black;
-    background-color: white;
+.error {
+  color: #dc3545; /* Error message color */
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.custom-button {
+  width: 100%;
+  background-color: #007bff; /* Button background color */
+  border: none;
+  color: #fff; /* Button text color */
+  padding: 10px 0;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Button background color on hover */
 }
 
 .link {
-    color: #ff004f;
+  color: #007bff; /* Link color */
 }
 
+.link:hover {
+  text-decoration: none;
+  color: #0056b3; /* Link color on hover */
+}

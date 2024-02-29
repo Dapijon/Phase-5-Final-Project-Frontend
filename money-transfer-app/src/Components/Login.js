@@ -38,7 +38,7 @@ function Login() {
   return (
     <div className="container">
       <div className="form">
-        <h1 className="heading">Login</h1>
+        <h1 className="heading-login">Login</h1>
         <form onSubmit={handleSubmit(loginUser)}>
           <Form.Group>
             <Form.Label>Email Address:</Form.Label>

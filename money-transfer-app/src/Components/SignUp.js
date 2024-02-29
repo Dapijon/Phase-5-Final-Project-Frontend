@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Alert, Card } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
@@ -52,10 +52,8 @@ function SignUp() {
   };
 
   return (
-    <div className="container">
+    <div className="container-1">
       <div className="form-contents">
-        <Card className="card">
-          <Card.Body>
             {show ? (
               <>
                 <Alert
@@ -230,8 +228,6 @@ function SignUp() {
                 </Link>
               </small>
             </Form.Group>
-          </Card.Body>
-        </Card>
       </div>
     </div>
   );
