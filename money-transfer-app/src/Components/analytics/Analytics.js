@@ -10,10 +10,13 @@ import { getUserSummaryStart, getUserSummarySuccess, getUserSummaryFailure } fro
 import { setError, setLoading, setTransactions } from '../../app/analyticsSlice';
 
 const Analytics = () => {
+  const currentUser = useSelector((state)=> state.auth.user);
   const accessToken = useSelector((state) => state.auth.accessToken);
   const dispatch = useDispatch();
   const transactions = useSelector((state) => state.analytics.transactions);
   const userSummary = useSelector((state) => state.userSummary.userSummary);
+
+  console.log(currentUser)
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -21,12 +24,14 @@ const Analytics = () => {
         dispatch(setLoading());
         const decodedToken = jwtDecode(accessToken);
         const userId = decodedToken.userId;
+        console.log('user ID',userId);
 
-        const response = await axios.get(`http://127.0.0.1:5000/user/${userId}/transactions`, {
+        const response = await axios.get(`http://127.0.0.1:5000/summary/user-transactions`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         });
+        console.log('response',response.data)
         dispatch(setTransactions(response.data));
       } catch (error) {
         dispatch(setError(error.message));
@@ -55,6 +60,7 @@ const Analytics = () => {
 
   return (
     <>
+      {currentUser ? `Welcome, ${currentUser.first_name}!` : 'Please sign in'}
       <Container fluid className='analytics'>
         <Row>
           <Col xs={12} md={4} className="mb-3">
