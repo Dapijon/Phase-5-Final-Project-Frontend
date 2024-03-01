@@ -2,3 +2,8 @@
     height: 100vh;
     color: red
 }
+.summary-table{
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 10px;
+}
