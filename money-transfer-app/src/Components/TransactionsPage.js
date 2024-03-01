@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 import "./TransactionsPage.css";
 
-const TransactionPage = () => {
+const TransactionsPage = () => {
   const [depositAmount, setDepositAmount] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [transferAmount, setTransferAmount] = useState("");
@@ -11,6 +12,9 @@ const TransactionPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Accessing the user state from the Redux store
+  const user = useSelector((state) => state.user);
+
   const handleDepositSubmit = async (event) => {
     event.preventDefault();
     console.log("Deposit amount:", depositAmount);
@@ -18,20 +22,41 @@ const TransactionPage = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post("http://127.0.0.1:5000/makeDeposit", {
-        amount: depositAmount,
-        key: "SJFuEzKXob9ztiXh1nGKZCsAFT2BDbQmPGNpQOp95GKw7ASM",
-        secret:
-          "AtQ9sa581NtvO8YB4E9m5VYsATlBLQSCAuG6ryr7slpApSgWe6ASrFuISxN1kxsg",
-      });
+      // Log user and user.accessToken
+      console.log("User:", user);
+      console.log("Access Token:", user?.accessToken);
 
-      console.log(response.data);
+      // Check if user and user.accessToken are defined
+      if (user && user?.accessToken) {
+        const response = await axios.post(
+          "http://127.0.0.1:5000/transaction/process_payment",
+          {
+            amount: depositAmount,
+            key: "SJFuEzKXob9ztiXh1nGKZCsAFT2BDbQmPGNpQOp95GKw7ASM",
+            secret:
+              "AtQ9sa581NtvO8YB4E9m5VYsATlBLQSCAuG6ryr7slpApSgWe6ASrFuISxN1kxsg",
+          },
+          // Include the Authorization header with the access token
+          {
+            headers: {
+              Authorization: `Bearer ${user?.accessToken}`,
+            },
+          }
+        );
 
-      setAccountBalance(
-        (prevBalance) => prevBalance + parseFloat(depositAmount)
-      );
+        console.log(response.data);
 
-      setLoading(false);
+        setAccountBalance(
+          (prevBalance) => prevBalance + parseFloat(depositAmount)
+        );
+
+        setLoading(false);
+      } else {
+        // Handle the case where user or user.accessToken is undefined
+        console.error("User or access token is undefined", user);
+        setError("User authentication error");
+        setLoading(false);
+      }
     } catch (error) {
       console.error("Error depositing:", error);
       setError("Error depositing. Please try again.");
@@ -47,7 +72,11 @@ const TransactionPage = () => {
     // Send transfer request to backend
     axios
       .post(
-        `http://127.0.0.1:5000/cash_transfer/${phoneNumber}/${transferAmount}`
+        `http://127.0.0.1:5000/transaction/cashTransfer/${phoneNumber}/${transferAmount}`,
+        {
+          // Use the access token from the Redux store
+          access_token: user?.accessToken,
+        }
       )
       .then((response) => {
         console.log(response.data);
@@ -169,4 +198,4 @@ const TransactionPage = () => {
   );
 };
 
-export default TransactionPage;
+export default TransactionsPage;

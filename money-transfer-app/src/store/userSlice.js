@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     isAuthenticated: false,
     user: null,
@@ -9,9 +9,9 @@ const userSlice = createSlice({
       transactions: [],
     },
     profile: {
-      name: '',
-      email: '',
-      phoneNumber: '',
+      name: "",
+      email: "",
+      phoneNumber: "",
     },
     beneficiaries: [],
   },
@@ -30,7 +30,7 @@ const userSlice = createSlice({
     addFunds: (state, action) => {
       state.wallet.balance += action.payload;
       state.wallet.transactions.push({
-        type: 'deposit',
+        type: "deposit",
         amount: action.payload,
         timestamp: new Date(),
       });
@@ -42,7 +42,7 @@ const userSlice = createSlice({
       const { amount, beneficiary } = action.payload;
       state.wallet.balance -= amount;
       state.wallet.transactions.push({
-        type: 'withdrawal',
+        type: "withdrawal",
         amount,
         beneficiary,
         timestamp: new Date(),
@@ -52,12 +52,12 @@ const userSlice = createSlice({
 });
 
 export const {
-    login,
-    logout,
-    updateProfile,
-    addFunds,
-    addBeneficiary,
-    sendMoney,
+  login,
+  logout,
+  updateProfile,
+  addFunds,
+  addBeneficiary,
+  sendMoney,
 } = userSlice.actions;
 
 export default userSlice;

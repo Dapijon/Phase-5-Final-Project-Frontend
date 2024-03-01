@@ -1,37 +1,50 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { signIn } from "../app/authSlice";
 import "./Login.css";
 
 function Login() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const dispatch = useDispatch();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const loginUser = async (data) => {
     try {
       const requestOptions = {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       };
 
-      const response = await fetch('http://127.0.0.1:5000/auth/login', requestOptions);
+      const response = await fetch(
+        "http://127.0.0.1:5000/auth/login",
+        requestOptions
+      );
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       const responseData = await response.json();
       console.log(responseData.access_token);
-      dispatch(signIn({ accessToken: responseData.access_token, user: responseData.user }));
-      navigate('/analytics');
+      dispatch(
+        signIn({
+          accessToken: responseData.access_token,
+          user: responseData.user,
+        })
+      );
+      navigate("/analytics");
       reset();
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -82,7 +95,10 @@ function Login() {
           <br />
           <Form.Group>
             <small>
-              Do not have an account? <Link className="link" to="/signup">Create One</Link>
+              Do not have an account?{" "}
+              <Link className="link" to="/signup">
+                Create One
+              </Link>
             </small>
           </Form.Group>
         </form>
