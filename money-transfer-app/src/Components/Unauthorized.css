@@ -1,0 +1,13 @@
+.unauthorized {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+ 
+    margin: auto;
+
+}
+
+p {
+    margin: 0 auto;
+}
+

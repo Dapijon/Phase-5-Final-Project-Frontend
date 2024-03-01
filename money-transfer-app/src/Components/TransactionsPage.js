@@ -14,7 +14,7 @@ const TransactionPage = () => {
     console.log('Deposit amount:', depositAmount);
 
     // Send deposit request to backend
-    axios.post('http://localhost:5000/transactions/deposit', { amount: depositAmount })
+    axios.post('http://localhost:5000/transaction/deposit', { amount: depositAmount })
 
       .then(response => {
         console.log(response.data);
@@ -32,7 +32,7 @@ const TransactionPage = () => {
     console.log('Transfer amount:', transferAmount);
 
     // Send transfer request to backend
-    axios.post(`/transactions/cash_transfer/${phoneNumber}/${transferAmount}`)
+    axios.post(`http://localhost:5000/transaction/cash_transfer/${phoneNumber}/${transferAmount}`)
       .then(response => {
         console.log(response.data);
         // Update account balance
@@ -66,13 +66,13 @@ const TransactionPage = () => {
         <form onSubmit={handleDepositSubmit}>
           <label>
             Deposit Amount:
-            <input 
-              type="number" 
-              value={depositAmount} 
-              onChange={(event) => setDepositAmount(event.target.value)} 
+            <input
+              type="number"
+              value={depositAmount}
+              onChange={(event) => setDepositAmount(event.target.value)}
             />
           </label>
-          <button 
+          <button
             type="submit"
             className="button"
             style={{
@@ -94,22 +94,22 @@ const TransactionPage = () => {
         <form onSubmit={handleTransferSubmit}>
           <label>
             Phone Number:
-            <input 
-              type="text" 
-              value={phoneNumber} 
-              onChange={(event) => setPhoneNumber(event.target.value)} 
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={(event) => setPhoneNumber(event.target.value)}
             />
           </label>
           <label>
             Transfer Amount:
-            <input 
-              type="number" 
-              value={transferAmount} 
-              onChange={(event) => setTransferAmount(event.target.value)} 
+            <input
+              type="number"
+              value={transferAmount}
+              onChange={(event) => setTransferAmount(event.target.value)}
             />
           </label>
           <div className="form-buttons">
-            <button 
+            <button
               type="submit"
               className="button"
               style={{
@@ -120,8 +120,8 @@ const TransactionPage = () => {
             >
               Send
             </button>
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={addToFavorites}
               className="button"
               style={{
