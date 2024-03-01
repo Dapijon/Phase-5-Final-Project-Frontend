@@ -3,14 +3,24 @@ import './Adminusercard.css';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
 
 const AdminUserCard = ({ user, onClick }) => {
+    const accessToken = useSelector((state) => state.auth.accessToken);
+    
 
     const handleMakeAdmin = async (userId) => {
         try {
             console.log(`user id : ${userId}`)
-            const response = await axios.put(`http://127.0.0.1:5000/summary/make-admin/${userId}`);
-            console.log('User has been made admin');
+            console.log('access: ', accessToken)
+            const response = await axios.put(`http://127.0.0.1:5000/summary/make-admin/${userId}`, {
+                headers: {
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              });
+            console.log('User has been made admin');              
+            window.location.reload();    
+            alert('User has been made admin successfully.');
           
         } catch (error) {
             console.error('Error making user admin:', error);
@@ -20,8 +30,14 @@ const AdminUserCard = ({ user, onClick }) => {
 
     const handleRemoveAdmin = async (userId) => {
         try {
-            const response = await axios.put(`http://127.0.0.1:5000/summary/remove-admin/${userId}`);
+            const response = await axios.put(`http://127.0.0.1:5000/summary/remove-admin/${userId}`, {
+                headers: {
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              });
             console.log('Admin status removed successfully');
+            window.location.reload();    
+            alert('Admin status has been removed successfully.');
            
         } catch (error) {
             console.error('Error removing admin status:', error);
@@ -32,8 +48,14 @@ const AdminUserCard = ({ user, onClick }) => {
 
     const deleteUser = async (userId) => {
         try {
-            const response = await axios.delete(`http://127.0.0.1:5000/summary/users/${userId}`);
+            const response = await axios.delete(`http://127.0.0.1:5000/summary/users/${userId}`, {
+                headers: {
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              });
             console.log('User deleted successfully');
+            window.location.reload();    
+            alert('User has been deleted successfully.');
 
         } catch (error) {
             console.error('Error deleting user:', error);
