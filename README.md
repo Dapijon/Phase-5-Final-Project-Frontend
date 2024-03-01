@@ -45,9 +45,13 @@ This command will run the tests and display the results in the terminal.
 
 # This app is Built With:
 React - JavaScript library for building user interfaces
+
 React Router - Library for routing in React applications
+
 Bootstrap - Front-end framework for designing responsive and mobile-first websites
+
 Axios - Promise-based HTTP client for making HTTP requests
+
 React Hook Form - Library for managing form state in React applications
 
 # Contributing
@@ -55,8 +59,11 @@ Contributions to the Money Transfer App frontend are welcome! If you have any su
 
 # Authors
 Leon Kinyanjui
+
 Walter Ndungu
+
 Humphrey Hinga
+
 Charles Wanjiku
 
 # License
