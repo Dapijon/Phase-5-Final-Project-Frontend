@@ -1,0 +1,11 @@
+.admin-summary {
+    margin: auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    
+    flex-direction: column;
+    gap: 100px;
+    text-align: center;
+
+}

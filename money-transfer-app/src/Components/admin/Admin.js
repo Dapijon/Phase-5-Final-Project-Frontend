@@ -4,11 +4,16 @@ import { fetchUsers, selectAllUsers, selectUsersLoading, selectUsersError } from
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminUserCard from './Admin-User-card';
+import { jwtDecode } from 'jwt-decode'
+import { useNavigate } from "react-router-dom";
 
 import './Admin.css';
 
 const Admin = () => {
 
+  const accessToken = useSelector((state) => state.auth.accessToken);
+  const navigate = useNavigate();
+  const decodedToken = accessToken ? jwtDecode(accessToken) : null;
   const dispatch = useDispatch();
   const users = useSelector((state) => state.allusers.users);
   const loading = useSelector((state) => state.allusers.loading);
@@ -35,6 +40,10 @@ const Admin = () => {
   const handleCardClick = (user) => {
     toast.info(`User: ${user.first_name} ${user.last_name}, Transaction Details: ...`);
   };
+    
+  if (decodedToken && !decodedToken.is_admin) {
+    return navigate("/unauthorized" );
+}
 
   return (
     <>
