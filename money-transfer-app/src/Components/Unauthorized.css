@@ -4,10 +4,13 @@
     flex-direction: column;
  
     margin: auto;
+    color: red;
+    margin-top: 50px;
 
 }
 
-p {
+.unauthorized p {
     margin: 0 auto;
+    color: blue;
 }
 
